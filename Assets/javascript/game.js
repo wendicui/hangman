@@ -292,10 +292,8 @@ document.onkeyup = function(event) {
 
             	count -=1;
 <<<<<<< HEAD
-            	if (count < 0 ){
-            		count = 0;
-            	}
-=======
+            	
+
 		if (count < 0){
 			count = 0}
 >>>>>>> 67f003185f3011c0fb5783f9a410974f2136ab8c
