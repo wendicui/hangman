@@ -1,0 +1,88 @@
+*{
+	box-sizing: border-box;
+	color:white;
+}
+
+
+
+.nd{
+	width:20px;
+	margin:5%;
+	border-bottom: solid white 1px;
+	display:inline-block;
+	text-align: center;
+}
+
+
+.img{
+
+	background-size: cover;
+	background-image:url(bk.jpg);
+	text-align: center;
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -3;
+}
+
+.bonus img{
+	width:20%;
+	height:auto;
+}
+
+.bonus{
+
+	position:absolute;
+	top:50%;
+	left:40%;
+}
+
+.center{
+	color:white;
+	position:absolute;
+    top: 35%;
+    left:35%;
+    width: 30% !important;
+    text-align: center;
+}
+
+.center h4{
+
+	line-height: 100%;
+	font-size: 70%;
+}
+
+.center::after {
+  content: "";
+  background: url(https://vignette4.wikia.nocookie.net/joke-battles/images/5/5a/Black.jpg/revision/latest?cb=20161223050425);
+  border-radius: 3%;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
+.cities{
+	font-size:100%;
+}
+
+.back{
+	margin-bottom: 3%;
+
+
+}
+
+.back h1{
+	font-size:180%;
+	margin-top:2%;
+}
+
+
+.animate{
+	position: fixed;
+}
