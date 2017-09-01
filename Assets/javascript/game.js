@@ -312,6 +312,9 @@ document.onkeyup = function(event) {
   //console.log("losecount: " + count);          	
               lose +=1;
               count -=1;
+              if (count < 0 ){
+            		count = 0;
+            	}
               $("#left").html(count);
               $("#lose").html(lose);
               $(".letter").css("opacity", "1");
