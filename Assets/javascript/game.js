@@ -291,6 +291,9 @@ document.onkeyup = function(event) {
                 }
 
             	count -=1;
+            	if (count < 0 ){
+            		count = 0;
+            	}
             	$("#left").html(count);
 
 
