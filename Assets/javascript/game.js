@@ -233,11 +233,8 @@ document.onkeyup = function(event) {
             if (found != -1 && count > 0 ){
               
               //var all = grabAll(guess, userGuess)
-
-              
-                
-                  
-                  //check how many letters to go
+               
+//check how many letters to go
                     var allInHidden = hidden.reduce(function(a, e, i) {
                             if (e === userGuess){
                                 a.push(i);}
@@ -247,26 +244,26 @@ document.onkeyup = function(event) {
                     left = left - allInHidden.length
                       
  //console.log("left: " + left)
- 					if (left > 0){
+ 		 if (left > 0){
                   //get all the index of the user input letter from guess
-                  var all = guess.reduce(function(a, e, i) {
-                      if (e === userGuess){
-                          a.push(i);}
-                      return a;
-                  }, []); 
+			  var all = guess.reduce(function(a, e, i) {
+			      if (e === userGuess){
+				  a.push(i);}
+			      return a;
+			  }, []); 
 
-                    //change the guessed one to black to show them
-        
-                  $. each(all, function(index, value){
+			    //change the guessed one to show them
 
-                    $("#" + value.toString()).css("opacity", "1")
+			  $. each(all, function(index, value){
 
-                  })
+			    $("#" + value.toString()).css("opacity", "1")
+
+			  })
 
 
 
                 } else{
-
+		//wining
                  var all = guess.reduce(function(a, e, i) {
                       if (e === userGuess){
                           a.push(i);}
@@ -276,7 +273,7 @@ document.onkeyup = function(event) {
 //console.log(all);
                   $. each(all, function(index, value){
 
-                  $("#" + value.toString()).css("opacity", "1")
+                  	$("#" + value.toString()).css("opacity", "1")
 
                   })
 
@@ -304,12 +301,12 @@ document.onkeyup = function(event) {
 
             	count -=1;
             	$("#left").html(count);
- //console.log("count: " + count);
+//console.log("count: " + count);
 
             }
             else{
 
-  //console.log("losecount: " + count);          	
+//console.log("losecount: " + count);          	
               lose +=1;
               count -=1;
               if (count < 0 ){
