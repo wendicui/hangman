@@ -53,21 +53,6 @@ function begin(){
 
 // create hidden array with unshown letters
 
-	// ？？？？？？？？????????????
-	//      if(index1 < index2){
-
-	// 		var hidden = guess.splice(index1,1);
-			
-	// 		hidden = hidden.splice(index2 - 1,1);
-	// 		 console.log(hidden);
-	// 	}else{
-	// 		var hidden = guess.splice(index2,1);
-			
-	// 		hidden = hidden.splice(index1 - 1,1);
-	// 		console.log(hidden);
-	// 	}
-
-
 	var hidden = guess.reduce(function(a,v,i){
 
 		if(i !=index1 && i!= index2){
@@ -104,9 +89,7 @@ function begin(){
 			nd.attr("class","nd nd"+iString);
 
 			$(".cities").append(nd);
-
-			
-			
+		
 			var nedw = $("<span>" + value +"</span>").attr("id", iString);
 			nedw.attr("class","letter");
 			$(".nd"+iString).append(nedw);
@@ -122,19 +105,6 @@ function begin(){
 			
 			}
 		}
-
-		// // add lines to page
-		// 	$.each (guess, function(i, value){
-
-		// 	var iString = i.toString();
-		// 	var line = $("<span>" + "" +"</span>").attr("class", iString+"class");
-		// 	var line = $("<span>" + "" +"</span>").attr("class", "letter");
-		
-		// 	$(".line").append(line);
-		// 	//$("." + index1.toString() + "class").css("visibility","hidden");
-		// 	//$("." + index2.toString() + "class").css("visibility","hidden");
-			
-		// })
 
 }
 
