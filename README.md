@@ -5,7 +5,7 @@
 * Change between string and array; differentiate the following function:
   *  ```split``` : **String** , divide string into array based on passed in sepeartors
   *  ```slice``` : **String/Array** , get a fragment of the target
-  *  ```splce``` : **Array** , add or remove elements in to array
+  *  ```splice``` : **Array** , add or remove elements in to array
   
 
 * pass in paremeters to different functions: use global object
