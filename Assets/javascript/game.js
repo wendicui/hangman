@@ -7,7 +7,7 @@ function begin(){
 		"SANTORINI" ,"MILAN","VENICE","ROME","FLORENCE","VANTICAN"
 	];
 
-	var image = [ 
+	var image = [
 
 			"Assets/images/Santorini.jpg",
 			"Assets/images/Milano.jpg",
@@ -26,9 +26,9 @@ function begin(){
 	var random = trace[i];
 	var figure = figures[i];
 //make bk same as chosen
-	
+
 	$(".img").css("background-image","url('"+image[i] + "')" );
-	
+
 
 	$("audio").attr('src', mus[i]);
 
@@ -37,13 +37,14 @@ function begin(){
 //make the selected city into letters
 	var guess = random.split("");
 	$("#left").html(guess.length);
+	console.log("testing 1234");
 
 //randomly choose two elements.
 	var index1 = Math.floor(Math.random()* guess.length);
 
 	var index2 = Math.floor(Math.random()* guess.length);
 
-	
+
 	do{index2 = Math.floor(Math.random()* guess.length);
 	} while (index1 === index2)
 //use object property to make varaible global;
@@ -72,7 +73,7 @@ function begin(){
 
 //smuggle array to other functions
 
-	
+
 	trial.hidden = hidden;
 
 //add elements to page
@@ -81,15 +82,15 @@ function begin(){
 			$.each (guess, function(i, value){
 
 
-		//try to create a outer div, to make each letter space even, sothat 
-		//the border line below are all same width.	
+		//try to create a outer div, to make each letter space even, sothat
+		//the border line below are all same width.
 			var iString = i.toString();
 			var nd = $("<div>")
-			
+
 			nd.attr("class","nd nd"+iString);
 
 			$(".cities").append(nd);
-		
+
 			var nedw = $("<span>" + value +"</span>").attr("id", iString);
 			nedw.attr("class","letter");
 			$(".nd"+iString).append(nedw);
@@ -102,26 +103,26 @@ function begin(){
 
 			var str = i.toString();
 			$("#" + str).css("opacity","0");
-			
+
 			}
 		}
 
 }
 
-		
+
 
 	begin();
 //console.log("_____________________")
 //console.log(trial.guess)
-	
-	
-//user side 
+
+
+//user side
 var before = [];
 var guess = trial.guess
 var count = guess.length;
 var win = 0;
 var lose = 0;
-var hidden = trial.hidden; 
+var hidden = trial.hidden;
 var left = hidden.length;
 var start = false;
 
@@ -133,9 +134,9 @@ function makeAround(){
 
 	var h = $(window).height() ;
 	var w = $(window).width();
- 
+
 	var hr = 0.15* h + Math.floor(Math.random()*h*0.5);
-	
+
 	var wr = 0.15 *w + Math.floor(Math.random()*w*0.5);
 
 	return[hr, wr];
@@ -145,7 +146,7 @@ function makeAround(){
 //console.log(makeAround());
 
 //select random figure
-	
+
  $(".bonus").html("<img src=" +trial.figure +" class = 'animate'>")
 
  //BONUS MOVE
@@ -167,7 +168,7 @@ function makeAround(){
 
 document.onkeyup = function(event) {
 
-    if (start === true){ 
+    if (start === true){
     	$(".cities").empty()
     	$(".bonus").empty()
     	start = false;
@@ -176,20 +177,20 @@ document.onkeyup = function(event) {
         guess = trial.guess
         count = guess.length;
         hidden = trial.hidden;
-        left = hidden.length;    
+        left = hidden.length;
 
 		}
     else{ //user input
 
-      var userGuess = event.key.toUpperCase();  
+      var userGuess = event.key.toUpperCase();
 
 
       if (jQuery.inArray(userGuess, before) != -1){
-        
+
          count -=1;
          $("#left").html(count);
          alert("You have typed in this letter before")
-         
+
          //console.log(before)
 
       }else{
@@ -198,12 +199,12 @@ document.onkeyup = function(event) {
 //console.log(before);
 //console.log("------------------")
             var found = jQuery.inArray(userGuess, hidden);
-            
+
 //console.log(found)
             if (found != -1 && count > 0 ){
-              
+
               //var all = grabAll(guess, userGuess)
-               
+
 //check how many letters to go
                     var allInHidden = hidden.reduce(function(a, e, i) {
                             if (e === userGuess){
@@ -212,7 +213,7 @@ document.onkeyup = function(event) {
                         }, []);
 
                     left = left - allInHidden.length
-                      
+
  //console.log("left: " + left)
  		 if (left > 0){
                   //get all the index of the user input letter from guess
@@ -220,7 +221,7 @@ document.onkeyup = function(event) {
 			      if (e === userGuess){
 				  a.push(i);}
 			      return a;
-			  }, []); 
+			  }, []);
 
 			    //change the guessed one to show them
 
@@ -238,7 +239,7 @@ document.onkeyup = function(event) {
                       if (e === userGuess){
                           a.push(i);}
                       return a;
-                  }, []); 
+                  }, []);
 
 //console.log(all);
                   $. each(all, function(index, value){
@@ -276,7 +277,7 @@ document.onkeyup = function(event) {
             }
             else{
 
-//console.log("losecount: " + count);          	
+//console.log("losecount: " + count);
               lose +=1;
               count -=1;
               if (count < 0 ){
@@ -285,7 +286,7 @@ document.onkeyup = function(event) {
               $("#left").html(count);
               $("#lose").html(lose);
               $(".letter").css("opacity", "1");
-           
+
               start = true;
             	//begin();
             }
@@ -294,11 +295,3 @@ document.onkeyup = function(event) {
 }
 
 }
-
-
-
-
-
-
-
-
