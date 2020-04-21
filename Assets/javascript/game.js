@@ -38,6 +38,7 @@ function begin(){
 	var guess = random.split("");
 	$("#left").html(guess.length);
 	console.log("testing 1234");
+	var test2 = 5424534;
 
 //randomly choose two elements.
 	var index1 = Math.floor(Math.random()* guess.length);
